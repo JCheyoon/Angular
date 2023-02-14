@@ -1,5 +1,6 @@
 <div class="section">
-  here is section
-  <app-time-display></app-time-display>
-  <app-buttons></app-buttons>
+  <div class="display">
+    <app-time-display [inputData]="present"></app-time-display>
+    <app-buttons (clickEvent)="startTime($event)"></app-buttons>
+  </div>
 </div>
