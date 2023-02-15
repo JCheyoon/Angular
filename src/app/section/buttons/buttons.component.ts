@@ -9,7 +9,7 @@ export class ButtonsComponent {
   @Output() clickEvent = new EventEmitter<string>();
 
   constructor() {}
-  start() {
-    this.clickEvent.emit('버튼이 주는값');
+  executeButton(command: string) {
+    this.clickEvent.emit(command);
   }
 }
