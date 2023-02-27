@@ -20,6 +20,7 @@ export class TimeDisplayComponent implements OnChanges {
   }
 
   timeStart() {
+    this.timeStop();
     this.timeInterval = setInterval(() => {
       this.ms += 10;
       if (this.ms === 1000) {
