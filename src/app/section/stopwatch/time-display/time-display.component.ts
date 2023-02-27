@@ -16,14 +16,14 @@ export class TimeDisplayComponent implements OnChanges {
 
   timeInterval: number = 0;
   constructor() {
-    console.log(this.inputData);
+    // console.log(this.inputData);
   }
 
   timeStart() {
     this.timeStop();
     this.timeInterval = setInterval(() => {
-      this.ms += 10;
-      if (this.ms === 1000) {
+      this.ms += 1;
+      if (this.ms === 100) {
         this.ms = 0;
         this.sec++;
       }
@@ -45,7 +45,7 @@ export class TimeDisplayComponent implements OnChanges {
     this.ms = 0;
   }
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
+    // console.log(changes);
     for (let propName in changes) {
       if (propName === 'inputData') {
         switch (changes[propName].currentValue) {

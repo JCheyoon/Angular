@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PageToggleService {
+  constructor(private router: Router) {}
 
-  constructor() { }
+  goPage(target: string) {
+    this.router.navigateByUrl(target);
+  }
 }

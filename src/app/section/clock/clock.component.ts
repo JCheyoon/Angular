@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import * as moment from 'moment';
 import { interval, map } from 'rxjs';
 import { Router } from '@angular/router';
+import { PageToggleService } from '../../share/page-toggle.service';
 
 @Component({
   selector: 'app-clock',
@@ -10,7 +11,10 @@ import { Router } from '@angular/router';
 })
 export class ClockComponent {
   timeString: string = '';
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private pageToggleService: PageToggleService
+  ) {
     interval(1000)
       .pipe(
         map(() => {
@@ -22,6 +26,6 @@ export class ClockComponent {
       });
   }
   goStopwatch() {
-    this.router.navigateByUrl('/stopwatch');
+    this.pageToggleService.goPage('/stopwatch');
   }
 }
